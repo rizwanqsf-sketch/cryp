@@ -294,7 +294,6 @@ app.post('/api/admin/chats/:threadId/reply', adminAuth, (req, res) => {
 });
 
 // --- SINGLE DOMAIN STATIC SERVING (HOSTINGER PREP) ---
-const path = require('path');
 // Serve React's build dist folder as static assets from root public_html
 app.use(express.static(path.join(__dirname, '../public_html')));
 
