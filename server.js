@@ -294,12 +294,13 @@ app.post('/api/admin/chats/:threadId/reply', adminAuth, (req, res) => {
 });
 
 // --- SINGLE DOMAIN STATIC SERVING (HOSTINGER PREP) ---
-// Serve React's build dist folder as static assets from root public_html
-app.use(express.static(path.join(__dirname, '../public_html')));
+const path = require('path');
+// Serve React's build dist folder as static assets from current directory's public_html
+app.use(express.static(path.join(__dirname, 'public_html')));
 
 // Catch-all route to return React's index.html for client-side routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public_html/index.html'));
+  res.sendFile(path.join(__dirname, 'public_html/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
