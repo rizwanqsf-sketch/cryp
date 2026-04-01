@@ -1,3 +1,4 @@
+console.log('=== LOGGING STARTED: Awaker Server is entering the start phase ===');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -294,8 +295,7 @@ app.post('/api/admin/chats/:threadId/reply', adminAuth, (req, res) => {
 });
 
 // --- SINGLE DOMAIN STATIC SERVING (HOSTINGER PREP) ---
-const path = require('path');
-// Serve React's build dist folder as static assets from current directory's public_html
+// Serve React's build dist folder as static assets from root folder
 app.use(express.static(path.join(__dirname, 'public_html')));
 
 // Catch-all route to return React's index.html for client-side routing
@@ -303,8 +303,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public_html/index.html'));
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, '0.0.0.0', () => {
+const PORT = +process.env.PORT || 5000;
+app.listen(PORT, () => {
   console.log('--- AWAKER SERVER STARTUP ---');
   console.log(`Port: ${PORT}`);
   console.log(`Directory: ${__dirname}`);
