@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const multer = require('multer');
 const axios = require('axios');
 const nodemailer = require('nodemailer');
-require('dotenv').config();
 
 const app = express();
 app.use(cors());

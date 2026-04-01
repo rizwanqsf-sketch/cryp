@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Root package.json to deploy Awaker Trade on Hostinger",
   "scripts": {
-    "start": "cd awaker-backend && npm install && node server.js",
+    "start": "cd awaker-backend && node server.js",
     "build": "cd awaker-backend && npm install"
   },
   "engines": {
