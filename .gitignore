@@ -46,5 +46,4 @@ vite.config.ts
 server/
 shared/
 patches/
-package.json
-package-lock.json
+
