@@ -1,5 +1,5 @@
 node_modules/
-.env
+# .env is now allowed for easy Hostinger deployment
 awaker-web/dist/
 awaker-backend/node_modules/
 awaker-web/node_modules/
